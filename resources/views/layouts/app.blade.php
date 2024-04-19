@@ -11,11 +11,13 @@
 </head>
 
 <body class="antialiased bg-background">
-    @unless(Request::is('login', 'register'))
+    @unless (Request::is('login', 'register'))
         @livewire('navigation')
     @endunless
 
-    @livewire('CreateProject')
+    @auth
+        @livewire('CreateProject')
+    @endauth
 
     @yield('content')
 </body>

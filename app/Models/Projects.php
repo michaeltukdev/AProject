@@ -17,6 +17,7 @@ class Projects extends Model
         'start_date',
         'end_date',
         'phase',
+        'user_id'
     ];
 
     public function user() {
