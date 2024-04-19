@@ -20,16 +20,16 @@
         <ul class="items-center hidden gap-3 md:flex">
             @guest
             <li>
-                <a href="{{ route('login') }}" class=" nav-link flex gap-2.5 bg-container py-2.5 px-6 rounded-lg hover:bg-input transition hover:text-text-primary transition">@svg('heroicon-o-user', 'w-4') Sign In</a>
+                <a href="{{ route('login') }}" class=" nav-link flex gap-2.5 bg-container py-2.5 px-6 rounded-lg hover:bg-input hover:text-text-primary transition">@svg('heroicon-o-user', 'w-4') Sign In</a>
             </li>
             <li>
-                <a href="{{ route('register') }}" class=" text-background flex gap-2.5 bg-tertiary py-2.5 px-6 rounded-lg hover:bg-text-primary transitio transition">@svg('heroicon-s-user', 'w-4') Sign Up</a>
+                <a href="{{ route('register') }}" class=" text-background flex gap-2.5 bg-tertiary py-2.5 px-6 rounded-lg hover:bg-text-primary transition">@svg('heroicon-s-user', 'w-4') Sign Up</a>
             </li>
             @endguest
             
             @auth
             <li>
-                <a href="{{ route('register') }}" class=" text-background flex gap-2.5 bg-tertiary py-2 px-6 rounded-lg hover:bg-text-primary transitio transition">Create Project</a>
+                <a @click="$dispatch('create-project')" class="cursor-pointer text-background flex gap-2.5 bg-tertiary py-2 px-6 rounded-lg hover:bg-text-primary transition">Create Project</a>
             </li>
 
             <li class="relative flex items-center gap-2" x-data="{ open: false }">
@@ -41,7 +41,7 @@
         </ul>
 
         <button @click="open = !open" class="flex items-center md:hidden">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="white">
                 <path :class="{'hidden': open, 'block': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16 M4 12h16 M4 18h16" />
                 <path :class="{'block': open, 'hidden': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -70,10 +70,9 @@
 
             @auth
             <li class="relative flex items-center gap-2" x-data="{ open: false }">
-                <img src="{{ asset('assets/branding/logowithoutname.png') }}" alt="{{ auth()->user()->username }}" class="w-6 w-10 rounded">
                 <a x-on:click="open = !open" class="flex items-center gap-1 cursor-pointer nav-link">{{ auth()->user()->username }} <span :class="{ 'rotate-180': open }"> @svg('heroicon-o-chevron-down', 'h-4') </span></a>
                 
-                {{-- @livewire('partials.dropdown') --}}
+                @livewire('partials.dropdown')
             </li>
             @endauth
         </ul>

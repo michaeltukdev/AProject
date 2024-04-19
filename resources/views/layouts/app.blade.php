@@ -15,6 +15,8 @@
         @livewire('navigation')
     @endunless
 
+    @livewire('CreateProject')
+
     @yield('content')
 </body>
 
