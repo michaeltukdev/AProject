@@ -1,3 +1,17 @@
+@import url(https://fonts.bunny.net/css?family=poppins);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.primary-input-container {
+    @apply flex items-center px-3.5 mt-2.5 w-full rounded-md text-sm font-medium bg-input border border-input-border
+}
+
+.primary-input {
+    @apply flex-1 py-2.5 px-2.5 bg-input outline-none border-none text-sm font-medium focus:ring-0 text-text-primary
+}
