@@ -64,7 +64,9 @@ class CreateProject extends Component
             'user_id' => auth()->user()->id
         ]);
 
+        $this->dispatch('update-list');
 
+        $this->reset();
     }
 
     public function render()

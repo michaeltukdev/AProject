@@ -4,7 +4,7 @@
 
 <div class="container mt-8">
     <h1 class="text-2xl text-text-primary font-medium">Project List</h1>
-    <p class="mt-1 text-text-secondary font-light">You are viewing # of projects.</p>
+    <p class="mt-1 text-text-secondary font-light">You are viewing all of the projects.</p>
 
     @livewire('project-list')
 </div>
