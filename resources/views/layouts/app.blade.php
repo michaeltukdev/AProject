@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+
+    @vite('resources/css/app.css')
 </head>
-<body>
+
+<body class="antialiased bg-background">
     @yield('content')
 </body>
+
 </html>
