@@ -1,4 +1,4 @@
-@import url(https://fonts.bunny.net/css?family=poppins);
+@import url(https://fonts.bunny.net/css?family=poppins:100,200,300,400,500,600,700,800,900);
 
 @tailwind base;
 @tailwind components;
@@ -14,4 +14,8 @@ body {
 
 .primary-input {
     @apply flex-1 py-2.5 px-2.5 bg-input outline-none border-none text-sm font-medium focus:ring-0 text-text-primary
+}
+
+.nav-link {
+    @apply text-base text-text-secondary hover:text-primary transition
 }

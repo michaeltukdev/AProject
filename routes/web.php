@@ -8,7 +8,14 @@ use App\Http\Controllers\AuthController;
 // List all projects
 
 Route::view('/', 'home')->name('home');
-Route::get('/project/{project}', [ProjectController::class, 'show'])->name('project');
+Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('project');
+
+// User routes
+
+Route::middleware('auth')->group(function() {
+    Route::get('/projects/create', [ProjectController::class, 'create'])->name('create');
+    Route::get('/projects/edit', [ProjectController::class, 'edit'])->name('edit');
+});
 
 //  Auth routes
 
@@ -24,4 +31,4 @@ Route::get('/logout', function(Request $request) {
     $request->session()->regenerateToken();
 
     return redirect('/');
-});
+})->name('logout');

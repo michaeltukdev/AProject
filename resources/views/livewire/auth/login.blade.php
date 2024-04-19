@@ -1,5 +1,5 @@
 <div class="h-screen w-screen p-5 flex items-center justify-center">
-    <div class="bg-container p-8 rounded-lg shadow-2xl w-full max-w-lg">
+    <div class="bg-container p-8 rounded-lg shadow-2xl w-full max-w-md">
 
         <form class="space-y-5" wire:submit.prevent="login">
             <div>

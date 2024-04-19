@@ -11,6 +11,10 @@
 </head>
 
 <body class="antialiased bg-background">
+    @unless(Request::is('login', 'register'))
+        @livewire('navigation')
+    @endunless
+
     @yield('content')
 </body>
 
