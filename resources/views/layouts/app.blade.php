@@ -19,6 +19,8 @@
 
     @auth
         @livewire('CreateProject')
+
+        @livewire('ProjectModal')
     @endauth
 
     @yield('content')

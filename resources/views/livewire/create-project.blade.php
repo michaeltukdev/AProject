@@ -3,7 +3,7 @@
     <div x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-300"
         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-show="modalOpen"
-        class="fixed inset-0 flex justify-end w-full h-full backdrop-blur-sm" @click.outside="modalOpen = false">
+        class="fixed inset-0 z-50 flex justify-end w-full h-full backdrop-blur-sm" @click.outside="modalOpen = false">
 
         <div x-transition:enter="transition ease-out duration-300 transform"
             x-transition:enter-start="opacity-0 translate-x-full" x-transition:enter-end="opacity-100 translate-x-0"
@@ -32,17 +32,19 @@
                     <div>
                         <label for="title" class="text-white">Phase</label>
                         <select wire:model.blur="phase" class="w-full py-2 pl-4 pr-10 mt-2 text-sm text-white border rounded-lg outline-none focus:ring-0 bg-input border-input-border focus:border-1 focus:border-input-border">
-                            <option>Planning</option>
-                            <option>Development</option>
-                            <option>Testing</option>
-                            <option>Completed</option>
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="design">Design</option>
+                            <option value="development">Development</option>
+                            <option value="testing">Testing</option>
+                            <option value="deployment">Deployment</option>
+                            <option value="complete">Complete</option>
                         </select>
                         @error('phase') <span class="text-xs text-red-400">{{ $message }}</span> @enderror
                     </div>
                 </div>
     
                 <label for="notes" class="mt-6 text-white">Description</label>
-                <textarea wire:model.blur="description" placeholder="This is my awesome project..." class="w-full py-2 pl-4 pr-10 mt-2 text-sm text-white border rounded-lg outline-none focus:ring-0 bg-input border-input-border focus:border-1 focus:border-input-border h-32"></textarea>
+                <textarea wire:model.blur="description" placeholder="This is my awesome project..." class="w-full h-32 py-2 pl-4 pr-10 mt-2 text-sm text-white border rounded-lg outline-none focus:ring-0 bg-input border-input-border focus:border-1 focus:border-input-border"></textarea>
                 @error('description') <span class="text-xs text-red-400">{{ $message }}</span> @enderror
 
                 <div class="flex gap-4 mb-6">

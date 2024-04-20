@@ -8,7 +8,7 @@
 
     <div class="grid gap-4 mt-4 md:grid-cols-2 lg:grid-cols-3">
         @forelse($projects as $project)
-        <a href="#">
+        <a class="cursor-pointer" x-on:click="$dispatch('openproject', { projectId: {{ $project->id }}})">
             <div class="p-5 space-y-4 transition rounded-lg shadow-lg bg-container hover:shadow-2xl">
                 <h3 class="text-text-primary">{{ $project->title }}</h3>
                 <p class="text-sm font-light leading-6 tracking-wide text-text-secondary">{{ $project->description }}</p>

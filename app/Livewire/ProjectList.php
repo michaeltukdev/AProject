@@ -30,7 +30,7 @@ class ProjectList extends Component
         ->when($this->startDate, function ($query) {
             $query->where('start_date', '>=', $this->startDate); 
         })
-        ->orderBy('created_at', 'desc')->paginate(2);
+        ->orderBy('created_at', 'desc')->paginate(9);
 
         return $projects;
     }
