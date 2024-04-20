@@ -29,7 +29,11 @@ class CreateProject extends Component
             'title' => 'min:3|max:50|string|required',
             'description' => 'min:3|max:1000|required',
             'start_date' => 'required|date',
-            'end_date' => 'required|date',
+            'end_date' => [
+                'required',
+                'date',
+                'after_or_equal:start_date' 
+            ],
             'phase' => 'required',
         ];
     }
@@ -53,6 +57,10 @@ class CreateProject extends Component
 
     public function create()
     {
+        if (!auth()->check()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $this->validate();
 
         Projects::create([
