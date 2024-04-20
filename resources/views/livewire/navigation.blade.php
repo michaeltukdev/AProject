@@ -69,6 +69,10 @@
             @endguest
 
             @auth
+            <li>
+                <a @click="$dispatch('create-project')" class="cursor-pointer text-background flex gap-2.5 bg-tertiary py-2 px-6 rounded-lg hover:bg-text-primary transition">Create Project</a>
+            </li>
+
             <li class="relative flex items-center gap-2" x-data="{ open: false }">
                 <a x-on:click="open = !open" class="flex items-center gap-1 cursor-pointer nav-link">{{ auth()->user()->username }} <span :class="{ 'rotate-180': open }"> @svg('heroicon-o-chevron-down', 'h-4') </span></a>
                 

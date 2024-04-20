@@ -63,7 +63,7 @@ class CreateProject extends Component
 
         $this->validate();
 
-        Projects::create([
+        $projects = Projects::create([
             'title' => $this->title,
             'description' => $this->description,
             'start_date' => $this->start_date,
@@ -75,6 +75,8 @@ class CreateProject extends Component
         $this->dispatch('update-list');
 
         $this->reset();
+        
+        $this->dispatch('openproject', ['projectId' => $projects->id]);
     }
 
     public function render()

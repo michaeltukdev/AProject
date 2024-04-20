@@ -6,12 +6,12 @@
         </form>
     </div>
 
-    <div class="grid gap-4 mt-4 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid h-full gap-4 mt-4 md:grid-cols-2 lg:grid-cols-3">
         @forelse($projects as $project)
-        <a class="cursor-pointer" x-on:click="$dispatch('openproject', { projectId: {{ $project->id }}})">
-            <div class="p-5 space-y-4 transition rounded-lg shadow-lg bg-container hover:shadow-2xl">
+        <a class="h-full cursor-pointer" x-on:click="$dispatch('openproject', { projectId: {{ $project->id }}})">
+            <div class="h-full p-5 space-y-4 transition rounded-lg shadow-lg bg-container hover:shadow-2xl">
                 <h3 class="text-text-primary">{{ $project->title }}</h3>
-                <p class="text-sm font-light leading-6 tracking-wide text-text-secondary">{{ $project->description }}</p>
+                <p class="text-sm font-light leading-6 tracking-wide text-text-secondary">{{ Str::limit($project->description, 90, '...') }}</p>
                 <p class="text-sm font-light leading-6 tracking-wide text-text-secondary">Made by <span class="font-normal text-primary">{{ $project->user->username }}</span></p>
             </div>
         </a>
