@@ -20,10 +20,10 @@
         <ul class="items-center hidden gap-3 md:flex">
             @guest
             <li>
-                <a href="{{ route('login') }}" class=" nav-link flex gap-2.5 bg-container py-2.5 px-6 rounded-lg hover:bg-input hover:text-text-primary transition">@svg('heroicon-o-user', 'w-4') Sign In</a>
+                <a wire:navigate href="{{ route('login') }}" class=" nav-link flex gap-2.5 bg-container py-2.5 px-6 rounded-lg hover:bg-input hover:text-text-primary transition">@svg('heroicon-o-user', 'w-4') Sign In</a>
             </li>
             <li>
-                <a href="{{ route('register') }}" class=" text-background flex gap-2.5 bg-tertiary py-2.5 px-6 rounded-lg hover:bg-text-primary transition">@svg('heroicon-s-user', 'w-4') Sign Up</a>
+                <a wire:navigate href="{{ route('register') }}" class=" text-background flex gap-2.5 bg-tertiary py-2.5 px-6 rounded-lg hover:bg-text-primary transition">@svg('heroicon-s-user', 'w-4') Sign Up</a>
             </li>
             @endguest
             

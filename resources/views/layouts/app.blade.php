@@ -11,6 +11,8 @@
 </head>
 
 <body class="antialiased bg-background">
+    <img class="absolute object-cover w-full -z-50 h-full max-h-[500px]" alt="Background image" src="{{ asset('image.png') }}">
+
     @unless (Request::is('login', 'register'))
         @livewire('navigation')
     @endunless
