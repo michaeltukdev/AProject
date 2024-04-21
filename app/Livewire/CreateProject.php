@@ -75,8 +75,6 @@ class CreateProject extends Component
         $this->dispatch('update-list');
 
         $this->reset();
-        
-        $this->dispatch('openproject', ['projectId' => $projects->id]);
     }
 
     public function render()

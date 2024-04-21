@@ -1,4 +1,4 @@
-## About Laravel
+## About AProject
 
 This is a university project for my Internet Applications & Design module. I completed it in less than 24 hours so the code is pretty disgusting 
 
