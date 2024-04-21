@@ -10,7 +10,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="antialiased bg-background">
+<body class="pb-12 overflow-x-hidden antialiased bg-background @if (Request::is('login', 'register')) overflow-y-hidden @endif">
     <img class="absolute object-cover w-full -z-50 h-full max-h-[500px]" alt="Background image" src="{{ asset('image.png') }}">
 
     @unless (Request::is('login', 'register'))
@@ -20,8 +20,10 @@
     @auth
         @livewire('CreateProject')
 
-        @livewire('ProjectModal')
+        @livewire('EditProject')
     @endauth
+
+    @livewire('ProjectModal')
 
     @yield('content')
 </body>
