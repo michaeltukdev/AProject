@@ -15,6 +15,19 @@ class ProjectList extends Component
 
     protected $listeners = ['update-list' => 'updateProjectList'];
 
+    protected $updatesQueryString = ['title', 'startDate'];
+    protected $queryString = [
+        'title' => ['except' => ''],
+        'startDate' => ['except' => ''],
+    ];
+
+    public function updating($name, $value)
+    {
+        if ($name === 'title' || $name === 'startDate') {
+            $this->resetPage();
+        }
+    }
+
     public function render()
     {
         return view('livewire.project-list', [
@@ -28,7 +41,7 @@ class ProjectList extends Component
             $query->where('title', 'like', '%'.$this->title.'%');
         })
         ->when($this->startDate, function ($query) {
-            $query->where('start_date', '>=', $this->startDate); 
+            $query->where('start_date', '>=', $this->startDate);
         })
         ->orderBy('created_at', 'desc')->paginate(9);
 
