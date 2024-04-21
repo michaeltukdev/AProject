@@ -50,13 +50,13 @@
                 <div class="flex gap-4 mb-6">
                     <div>
                         <label for="title" class="text-white">Start Date</label>
-                        <input wire:model.blur="start_date" type="date" class="w-full py-2 pl-4 pr-10 mt-2 text-sm text-white border rounded-lg outline-none focus:ring-0 bg-input border-input-border focus:border-1 focus:border-input-border">
+                        <input wire:model.blur="start_date" type="date" class="w-full py-2 mt-2 text-sm text-white border rounded-lg outline-none focus:ring-0 bg-input border-input-border focus:border-1 focus:border-input-border">
                         @error('start_date') <span class="text-xs text-red-400">{{ $message }}</span> @enderror
                     </div>
     
                     <div>
                         <label for="title" class="text-white">End Date</label>
-                        <input wire:model.blur="end_date" type="date" class="w-full py-2 pl-4 pr-10 mt-2 text-sm text-white border rounded-lg outline-none focus:ring-0 bg-input border-input-border focus:border-1 focus:border-input-border">
+                        <input wire:model.blur="end_date" type="date" class="w-full py-2 mt-2 text-sm text-white border rounded-lg outline-none focus:ring-0 bg-input border-input-border focus:border-1 focus:border-input-border">
                         @error('end_date') <span class="text-xs text-red-400">{{ $message }}</span> @enderror
                     </div>
                 </div>

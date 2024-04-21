@@ -3,6 +3,7 @@
         <form>
             <input wire:model.live="title" type="text" placeholder="Search by title..." class="rounded-lg primary-input"/>
             <input wire:model.live="startDate" type="date" class="rounded-lg primary-input"/>
+            
         </form>
     </div>
 
